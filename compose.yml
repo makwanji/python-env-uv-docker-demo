@@ -1,0 +1,32 @@
+services:
+  api:
+    image: hello-api:1.0
+    container_name: hello-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 100
+
+  web:
+    image: hello-web:1.0
+    container_name: hello-web
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 100

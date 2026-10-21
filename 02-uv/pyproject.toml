@@ -1,0 +1,7 @@
+[project]
+name = "uv-demo-py311"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.34.2",
+]
